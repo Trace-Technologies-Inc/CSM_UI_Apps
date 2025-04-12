@@ -1,7 +1,7 @@
 # CSM_UI_Apps
 Apps for Zendesk, ServiceNow, etc.
 
-Run:
+Run (within zendesk-loan-quoting folder, or any other zendesk app):
 ```
 (base) Mac:Trace Yash$ npm install -g @zendesk/zcli
 zcli login
