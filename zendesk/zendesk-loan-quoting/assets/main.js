@@ -30,7 +30,7 @@ function makeRateEntry(principal, termMonths, apr) {
 
 document.getElementById('submit').addEventListener('click', function() {
   const amount = parseFloat(document.getElementById('loanAmount').value);
-  const creditScore = document.querySelector('input[name="creditScore"]:checked')?.value;
+  const creditScore = document.getElementById('creditScore').value;
   
   if (isNaN(amount) || !creditScore) {
     alert('Please fill in all required fields');

@@ -7,7 +7,7 @@
   <style>
     html, body {
       width: 900px;
-      height: 665px;
+      height: 540px;
       overflow: auto;
     }
     input[type="radio"] {
@@ -39,21 +39,23 @@
           <!-- Credit Score Range -->
           <div>
             <label class="block text-sm font-medium mb-2">Credit score</label>
-            <div id="creditScore" class="space-y-1">
-              <label class="flex items-center gap-2"><input type="radio" name="creditScore" value="excellent" /> Excellent (720+)</label>
-              <label class="flex items-center gap-2"><input type="radio" name="creditScore" value="good" /> Good (660-719)</label>
-              <label class="flex items-center gap-2"><input type="radio" name="creditScore" value="fair" /> Fair (600-659)</label>
-              <label class="flex items-center gap-2"><input type="radio" name="creditScore" value="poor" /> Poor (&lt;600)</label>
-            </div>
+            <select id="creditScore" class="w-full border-b border-gray-400 focus:outline-none focus:border-blue-700 py-2 bg-transparent">
+              <option selected disabled>Choose credit score</option>
+              <option value="excellent">Excellent (720+)</option>
+              <option value="good">Good (660-719)</option>
+              <option value="fair">Fair (600-659)</option>
+              <option value="poor">Poor (&lt;600)</option>
+            </select>
           </div>
 
           <!-- Car Condition -->
           <div>
             <label class="block text-sm font-medium mb-2">Car condition</label>
-            <div class="flex flex-col gap-2 mt-1">
-              <label class="flex items-center gap-2"><input type="radio" name="condition" value="new" /> New</label>
-              <label class="flex items-center gap-2"><input type="radio" name="condition" value="used" /> Used</label>
-            </div>
+            <select id="condition" class="w-full border-b border-gray-400 focus:outline-none focus:border-blue-700 py-2 bg-transparent">
+              <option selected disabled>Choose condition</option>
+              <option value="new">New</option>
+              <option value="used">Used</option>
+            </select>
           </div>
         </div>
 
@@ -62,31 +64,33 @@
           <!-- Year -->
           <div>
             <label class="block text-sm font-medium mb-2">Year</label>
-            <div id="year" class="grid grid-cols-2 gap-2">
-              <label><input type="radio" name="year" value="2025" /> 2025</label>
-              <label><input type="radio" name="year" value="2024" /> 2024</label>
-              <label><input type="radio" name="year" value="2023" /> 2023</label>
-              <label><input type="radio" name="year" value="2022" /> 2022</label>
-              <label><input type="radio" name="year" value="2021" /> 2021</label>
-              <label><input type="radio" name="year" value="2020" /> 2020</label>
-              <label><input type="radio" name="year" value="2019" /> 2019</label>
-              <label><input type="radio" name="year" value="2018" /> 2018</label>
-            </div>
+            <select id="year" class="w-full border-b border-gray-400 focus:outline-none focus:border-blue-700 py-2 bg-transparent">
+              <option selected disabled>Choose year</option>
+              <option value="2025">2025</option>
+              <option value="2024">2024</option>
+              <option value="2023">2023</option>
+              <option value="2022">2022</option>
+              <option value="2021">2021</option>
+              <option value="2020">2020</option>
+              <option value="2019">2019</option>
+              <option value="2018">2018</option>
+            </select>
           </div>
 
           <!-- State -->
           <div>
             <label class="block text-sm font-medium mb-2">State</label>
-            <div id="state" class="grid grid-cols-2 gap-2">
-              <label><input type="radio" name="state" value="CA" /> CA</label>
-              <label><input type="radio" name="state" value="NY" /> NY</label>
-              <label><input type="radio" name="state" value="TX" /> TX</label>
-              <label><input type="radio" name="state" value="FL" /> FL</label>
-              <label><input type="radio" name="state" value="WA" /> WA</label>
-              <label><input type="radio" name="state" value="IL" /> IL</label>
-              <label><input type="radio" name="state" value="MA" /> MA</label>
-              <label><input type="radio" name="state" value="CO" /> CO</label>
-            </div>
+            <select id="state" class="w-full border-b border-gray-400 focus:outline-none focus:border-blue-700 py-2 bg-transparent">
+              <option selected disabled>Choose state</option>
+              <option value="CA">CA</option>
+              <option value="NY">NY</option>
+              <option value="TX">TX</option>
+              <option value="FL">FL</option>
+              <option value="WA">WA</option>
+              <option value="IL">IL</option>
+              <option value="MA">MA</option>
+              <option value="CO">CO</option>
+            </select>
           </div>
         </div>
 
