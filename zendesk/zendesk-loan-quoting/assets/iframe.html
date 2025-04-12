@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Auto Loan Calculator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html, body {
+      width: 900px;
+      height: 665px;
+      overflow: auto;
+    }
+    input[type="radio"] {
+      accent-color: #1d4ed8;
+    }
+  </style>
+</head>
+<body class="bg-white p-6 font-sans text-sm text-gray-700">
+  <div class="border border-gray-300 rounded-lg p-4 shadow-md w-full h-full">
+    <h2 class="text-xl font-semibold mb-4">Auto Loan Calculator</h2>
+
+    <div class="flex gap-4">
+      <!-- Main Form (Left) -->
+      <div class="w-2/3 space-y-6">
+        <!-- Financing Amount -->
+        <div>
+          <label class="block text-sm font-medium mb-1">Financing amount</label>
+          <input
+            type="number"
+            id="loanAmount"
+            placeholder="Tell us an amount"
+            class="w-full border-b border-gray-400 focus:outline-none focus:border-blue-700 py-1"
+          />
+          <a href="#" class="text-xs text-blue-600 mt-1 inline-block">▸ Not sure? Share some info and we'll help.</a>
+        </div>
+
+        <!-- Row: Credit Score + Car Condition -->
+        <div class="grid grid-cols-2 gap-8 mb-6">
+          <!-- Credit Score Range -->
+          <div>
+            <label class="block text-sm font-medium mb-2">Credit score</label>
+            <div id="creditScore" class="space-y-1">
+              <label class="flex items-center gap-2"><input type="radio" name="creditScore" value="excellent" /> Excellent (720+)</label>
+              <label class="flex items-center gap-2"><input type="radio" name="creditScore" value="good" /> Good (660-719)</label>
+              <label class="flex items-center gap-2"><input type="radio" name="creditScore" value="fair" /> Fair (600-659)</label>
+              <label class="flex items-center gap-2"><input type="radio" name="creditScore" value="poor" /> Poor (&lt;600)</label>
+            </div>
+          </div>
+
+          <!-- Car Condition -->
+          <div>
+            <label class="block text-sm font-medium mb-2">Car condition</label>
+            <div class="flex flex-col gap-2 mt-1">
+              <label class="flex items-center gap-2"><input type="radio" name="condition" value="new" /> New</label>
+              <label class="flex items-center gap-2"><input type="radio" name="condition" value="used" /> Used</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row: Year + State -->
+        <div class="grid grid-cols-2 gap-8 mb-6">
+          <!-- Year -->
+          <div>
+            <label class="block text-sm font-medium mb-2">Year</label>
+            <div id="year" class="grid grid-cols-2 gap-2">
+              <label><input type="radio" name="year" value="2025" /> 2025</label>
+              <label><input type="radio" name="year" value="2024" /> 2024</label>
+              <label><input type="radio" name="year" value="2023" /> 2023</label>
+              <label><input type="radio" name="year" value="2022" /> 2022</label>
+              <label><input type="radio" name="year" value="2021" /> 2021</label>
+              <label><input type="radio" name="year" value="2020" /> 2020</label>
+              <label><input type="radio" name="year" value="2019" /> 2019</label>
+              <label><input type="radio" name="year" value="2018" /> 2018</label>
+            </div>
+          </div>
+
+          <!-- State -->
+          <div>
+            <label class="block text-sm font-medium mb-2">State</label>
+            <div id="state" class="grid grid-cols-2 gap-2">
+              <label><input type="radio" name="state" value="CA" /> CA</label>
+              <label><input type="radio" name="state" value="NY" /> NY</label>
+              <label><input type="radio" name="state" value="TX" /> TX</label>
+              <label><input type="radio" name="state" value="FL" /> FL</label>
+              <label><input type="radio" name="state" value="WA" /> WA</label>
+              <label><input type="radio" name="state" value="IL" /> IL</label>
+              <label><input type="radio" name="state" value="MA" /> MA</label>
+              <label><input type="radio" name="state" value="CO" /> CO</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Car Brand Dropdown -->
+        <div class="mb-8">
+          <label class="block text-sm font-medium mb-2">Brand</label>
+          <select
+            id="carBrand"
+            class="w-full border-b border-gray-400 focus:outline-none focus:border-blue-700 py-2 bg-transparent"
+          >
+            <option selected disabled>Choose car</option>
+            <option>Honda</option>
+            <option>Toyota</option>
+            <option>Ford</option>
+            <option>Tesla</option>
+            <option>BMW</option>
+            <option>Audi</option>
+            <option>Hyundai</option>
+            <option>Kia</option>
+            <option>Chevrolet</option>
+            <option>Nissan</option>
+            <option>Volkswagen</option>
+            <option>Subaru</option>
+            <option>Mercedes-Benz</option>
+            <option>Jeep</option>
+            <option>Ram</option>
+            <option>Dodge</option>
+            <option>Volvo</option>
+            <option>Cadillac</option>
+            <option>GMC</option>
+            <option>Lexus</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <!-- Submit Button -->
+        <button
+          id="submit"
+          class="w-full bg-blue-700 hover:bg-blue-800 text-white text-base py-3 rounded font-semibold"
+        >
+          See our rates
+        </button>
+      </div>
+
+      <!-- Rates Panel (Right) -->
+      <div class="w-1/3 bg-gray-100 border border-gray-300 rounded-lg p-4 h-full self-start">
+        <h3 class="text-md font-semibold mb-2">Your Quotes</h3>
+        <div id="quotesPanel" class="text-sm text-gray-600 italic">
+          No quotes to display
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 💡 Backend Integration (DO NOT REMOVE) -->
+  <script src="main.js"></script>
+</body>
+</html>
